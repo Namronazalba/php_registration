@@ -89,4 +89,42 @@ if (isset($_POST['reg_user'])) {
   }
 }
 
+
+
+// LOGIN USER
+
+    
+    if(isset($_POST['login_user'])){
+      $email = mysqli_real_escape_string($conn, $_POST['email']);
+      $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+      if (empty($email)) {
+        array_push($error2, "Email is required");
+      } else{
+            if (empty($password)) {
+              array_push($error3, "Password is required");
+            }else{
+              $sql = "select * from user where email = '".$email."'";
+              $user_email = mysqli_query($conn,$sql);
+              $numRows = mysqli_num_rows($user_email);
+              
+              if($numRows  == 1){
+                $row = mysqli_fetch_assoc($user_email);
+                if(password_verify($password,$row['password'])){
+                  $_SESSION['email'] = $email;
+                  $_SESSION['success'] = "You are now logged in";
+                  header('location: index.php');
+                }else {
+                    array_push($errors, "Email or password is incorrect");
+                }
+              }else {
+                if($numRows  == 0){
+                  array_push($errors, "No User found");
+                }
+                
+              }
+            }
+          }
+      }       
+     
   ?>
