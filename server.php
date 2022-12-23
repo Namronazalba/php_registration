@@ -3,7 +3,9 @@ session_start();
 
 // initializing variables
 $username = "";
-$email    = "";
+$email = "";
+$password_1 = "";
+$password_2 = "";
 $errors = array(); 
 $error1 = array(); 
 $error2 = array(); 
@@ -92,7 +94,8 @@ if (isset($_POST['reg_user'])) {
 
 
 // LOGIN USER
-
+$email = "";
+$password = "";
     
     if(isset($_POST['login_user'])){
       $email = mysqli_real_escape_string($conn, $_POST['email']);

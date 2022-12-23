@@ -14,12 +14,12 @@
   	<?php include('include_errors/errors.php'); ?>
   	<div class="input-group">
   		<label>Email</label>
-  		<input type="text" name="email" value=""  autocomplete="off">
+  		<input type="text" name="email" value="<?php echo $email; ?>"  autocomplete="off">
 		  <?php include('include_errors/error2.php'); ?>
   	</div>
   	<div class="input-group">
   		<label>Password</label>
-  		<input type="password" name="password" value="" autocomplete="off">
+  		<input type="password" name="password" value="<?php echo $password; ?>" autocomplete="off">
 		  <?php include('include_errors/error3.php'); ?>
   	</div>
   	<div class="input-group">
