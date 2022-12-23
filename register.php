@@ -23,12 +23,12 @@
   	</div>
   	<div class="input-group">
   	  <label>Password</label>
-  	  <input type="password" name="password_1">
+  	  <input type="password" name="password_1" value="<?php echo $password_1; ?>">
 	  <?php include('include_errors/error3.php'); ?>
   	</div>
   	<div class="input-group">
   	  <label>Password confirmation</label>
-  	  <input type="password" name="password_2">
+  	  <input type="password" name="password_2" value="<?php echo $password_2; ?>">
 	  <?php include('include_errors/error4.php'); ?>
   	</div>
   	<div class="input-group">
